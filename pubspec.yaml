@@ -1,0 +1,38 @@
+name: auth_app
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.9
+  fluttertoast: ^8.2.4
+  otp_text_field: ^1.1.3
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fonts/
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Casab
+      fonts:
+        - asset: assets/fonts/casab.ttf
+    - family: Script
+      fonts:
+        - asset: assets/fonts/script.ttf
+    - family: Vinque
+      fonts:
+        - asset: assets/fonts/vinque.otf
