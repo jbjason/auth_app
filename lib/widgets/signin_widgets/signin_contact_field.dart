@@ -15,7 +15,7 @@ class SignInContactField extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .titleSmall!
-              .copyWith(letterSpacing: -.3),
+              .copyWith(letterSpacing: -.3, color: MyColor.ashhLight),
         ),
         TextFormField(
           textInputAction: TextInputAction.done,

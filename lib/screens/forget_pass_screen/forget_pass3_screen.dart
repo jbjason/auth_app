@@ -18,7 +18,6 @@ class _ForgetPass3ScreenState extends State<ForgetPass3Screen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: CustomPaint(
         painter: ForgetPassPainter(),
@@ -34,15 +33,17 @@ class _ForgetPass3ScreenState extends State<ForgetPass3Screen> {
                 ),
               ),
               const SizedBox(width: 10),
-              // soowGood logo
+              // logo
               Positioned(
-                top: size.height * .01,
-                left: size.width * .2,
-                child: Image.asset(
-                  'assets/images/common/logo_main.png',
-                  width: size.width * .6,
-                  height: kToolbarHeight * 1.3,
-                  fit: BoxFit.contain,
+                top: -20,
+                left: 0,
+                right: 0,
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/logo_main4.png',
+                    height: kToolbarHeight * 3,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               Padding(

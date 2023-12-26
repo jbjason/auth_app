@@ -1,3 +1,4 @@
+import 'package:auth_app/constants/mycolor.dart';
 import 'package:auth_app/screens/signup_screen/signup_p1_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,8 @@ class SignInRegisterButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Don\'t have account yet?'),
+        const Text('Don\'t have account yet?',
+            style: TextStyle(color: MyColor.ashhLight)),
         TextButton(
           onPressed: () {
             Navigator.push(context,
@@ -19,10 +21,14 @@ class SignInRegisterButton extends StatelessWidget {
             children: [
               const Text(
                 "Register now",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: MyColor.skyPrimary),
               ),
               const SizedBox(width: 2),
-              Image.asset('assets/icons/arrows.png'),
+              Image.asset(
+                'assets/icons/arrows.png',
+                color: MyColor.ashhLight,
+              ),
             ],
           ),
         )

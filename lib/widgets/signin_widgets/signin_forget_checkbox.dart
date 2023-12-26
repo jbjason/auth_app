@@ -1,3 +1,4 @@
+import 'package:auth_app/constants/mycolor.dart';
 import 'package:auth_app/screens/forget_pass_screen/forget_pass1_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,14 +14,12 @@ class SignInForgetCheckBox extends StatelessWidget {
         ValueListenableBuilder(
           valueListenable: rememberMeBox,
           builder: (context, value, _) => Checkbox(
+            checkColor: Colors.white,
             value: value,
             onChanged: (val) => rememberMeBox.value = val!,
           ),
         ),
-        Text(
-          'Remember me',
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
+        const Text('Remember me', style: TextStyle(color: MyColor.ashhLight)),
         const Spacer(),
         GestureDetector(
           onTap: () {
@@ -29,12 +28,12 @@ class SignInForgetCheckBox extends StatelessWidget {
               MaterialPageRoute(builder: (_) => const ForgetPass1Screen()),
             );
           },
-          child: Text(
+          child: const Text(
             'Forget your password?',
-            style: Theme.of(context)
-                .textTheme
-                .bodyMedium!
-                .copyWith(color: Colors.cyan, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.cyan,
+                letterSpacing: -1,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ],

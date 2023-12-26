@@ -1,3 +1,4 @@
+import 'package:auth_app/constants/mycolor.dart';
 import 'package:auth_app/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: MyColor.ashhLight,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

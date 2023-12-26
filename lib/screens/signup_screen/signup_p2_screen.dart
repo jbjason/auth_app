@@ -10,19 +10,25 @@ class SignUpP2Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            left: 0,
-            right: 0,
-            height: size.height * .45,
-            child: Image.asset(
-              'assets/images/auth/login_logo.png',
-              fit: BoxFit.fill,
-            ),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: size.height,
+          width: size.width,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                right: 0,
+                height: size.height * .45,
+                child: Image.asset(
+                  'assets/images/login_back1.jpg',
+                  fit: BoxFit.fill,
+                ),
+              ),
+              SignUpP2Body(contact: contact, userType: userType),
+            ],
           ),
-          SignUpP2Body(contact: contact, userType: userType),
-        ],
+        ),
       ),
     );
   }

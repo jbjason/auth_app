@@ -1,4 +1,3 @@
-import 'package:auth_app/constants/mycolor.dart';
 import 'package:auth_app/widgets/signin_widgets/signin_button.dart';
 import 'package:auth_app/widgets/signin_widgets/signin_contact_field.dart';
 import 'package:auth_app/widgets/signin_widgets/signin_forget_checkbox.dart';
@@ -24,66 +23,74 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: MyColor.bluePrimary,
-      body: Stack(
-        children: [
-          Positioned(
-            left: 0,
-            right: 0,
-            height: size.height * .45,
-            child: SvgPicture.asset(
-              'assets/images/auth/bg.svg',
-              fit: BoxFit.fill,
-            ),
-          ),
-          Positioned(
-            top: size.height * .3,
-            left: size.width * .05,
-            width: size.width * .9,
-            height: size.height * .5,
-            child: Container(
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(13),
-                color: Colors.white,
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black45,
-                    blurRadius: 40,
-                    offset: Offset(10, 10),
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: size.height,
+          width: size.width,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: SvgPicture.asset(
+                  'assets/images/login_back2.svg',
+                  fit: BoxFit.fill,
+                ),
               ),
-              child: SingleChildScrollView(
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      Text(
-                        'Login to Your Account',
-                        style: Theme.of(context).textTheme.titleLarge,
+              Positioned(
+                left: size.width * .04,
+                right: size.width * .04,
+                top: size.height * .2,
+                child: UnconstrainedBox(
+                  child: Container(
+                    width: size.width * .92,
+                    padding: const EdgeInsets.all(15),
+                    //margin: const EdgeInsets.symmetric(horizontal: 20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(13),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/signin_1.jpg'),
+                        fit: BoxFit.cover,
                       ),
-                      SizedBox(height: size.height * .05),
-                      // email textField
-                      SignInContactField(controller: _contactController),
-                      // pass textField
-                      SigninPassField(controller: _passController),
-                      // remember-me checkBox & forget-pass button
-                      SignInForgetCheckBox(rememberMeBox: _rememberMeBox),
-                      const SizedBox(height: 15),
-                      // submit button
-                      _isLoading
-                          ? const Center(child: CircularProgressIndicator())
-                          : SignInButton(onSubmit: onSubmit),
-                      // already have account & register-now text
-                      const SignInRegisterButton(),
-                    ],
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 20,
+                          offset: Offset(15, 15),
+                        ),
+                      ],
+                    ),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/images/logo_main4.png',
+                            height: size.height * .2,
+                            fit: BoxFit.contain,
+                          ),
+                          // email textField
+                          SignInContactField(controller: _contactController),
+                          // pass textField
+                          SigninPassField(controller: _passController),
+                          // remember-me checkBox & forget-pass button
+                          SignInForgetCheckBox(rememberMeBox: _rememberMeBox),
+                          const SizedBox(height: 20),
+                          // submit button
+                          _isLoading
+                              ? const Center(child: CircularProgressIndicator())
+                              : SignInButton(onSubmit: onSubmit),
+                          const SizedBox(height: 10),
+                          const Divider(color: Colors.white),
+                          // already have account & register-now text
+                          const SignInRegisterButton(),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
